@@ -3,7 +3,7 @@ import pandas as pd
 
 # 🚀 Page Configurations (Premium Theme Setup)
 st.set_page_config(
-    page_title="GeneCare AI - NextGen Genetic Platform", 
+    page_title="GeneCare AI Pro - Clinical Platform", 
     page_icon="🧬", 
     layout="wide"
 )
@@ -42,14 +42,14 @@ st.html("""
 
 # Main Luminous Title Section
 st.html('<div class="main-title">🧬 GeneCare AI Pro</div>')
-st.html('<div class="subtitle">Enterprise Bio-Intelligence & Advanced Fetal Risk Simulation Architecture</div>')
+st.html('<div class="subtitle">Next-Gen Bio-Intelligence, Diagnostic Report Scanner & Gestational Risk Simulation Hub</div>')
 st.divider()
 
 # --- 🚀 4 ADVANCED STRUCTURAL PHASES (TABS) ---
 tab1, tab2, tab3, tab4 = st.tabs([
     "🧬 Phase 1: Genomic Compatibility", 
     "🤰 Phase 2: Embryonic Growth Timeline", 
-    "🛡️ Phase 3: Teratogenic Vision Shield",
+    "📁 Phase 3: AI Diagnostic Report Scanner",
     "🥗 Phase 4: Prenatal Nutrition Matrix"
 ])
 
@@ -74,12 +74,11 @@ with tab1:
             mother_sleep = st.slider("Mother's Sleep Optimization Scale (Hours/Night)", 4, 10, 8)
 
         st.divider()
-        
         st.subheader("🧬 Real-time Epigenetic Mutation Profile")
         mutation_resistance = 100 - (father_stress * 5) + (mother_sleep * 2)
         if mutation_resistance > 80:
             st.success(f"🛡️ **DNA Integrity Score: {mutation_resistance:.1f}% (Excellent)** — Low probability of stress-induced methylation anomalies.")
-        else:
+        if mutation_resistance <= 80:
             st.warning(f"⚡ **DNA Integrity Score: {mutation_resistance:.1f}% (Sub-Optimal)** — High parental cortisol indices detected.")
             
         st.divider()
@@ -107,21 +106,11 @@ with tab1:
             st.error("🔴 CRITICAL IMMUNOLOGICAL DISCORDANCE DETECTED: Rh Incompatibility Condition Active.")
             st.write("**Clinical Manifestation:** The mother is **Rh-Negative** and the father is **Rh-Positive**.")
             st.info("📌 **Action Plan:** Administer **Anti-D (RhoGAM)** immunoglobulin prophylaxis at gestational week 28.")
-            
-            st.html("""
-                <div class="status-box" style="background: linear-gradient(135deg, #4A1A1D, #7F1D1D); color: #FF4D4D; border: 2px solid #FF4D4D;">
-                    🚨 FETAL IMMUNE RISK: CRITICAL (85 / 100)
-                </div>
-            """)
-        else:
+            st.html('<div class="status-box" style="background: linear-gradient(135deg, #4A1A1D, #7F1D1D); color: #FF4D4D; border: 2px solid #FF4D4D;">🚨 FETAL IMMUNE RISK: CRITICAL (85 / 100)</div>')
+        if is_mother_pos or (not is_father_pos):
             st.success("✅ GENOMIC COMPATIBILITY INDEX SECURE: No Rh Isolation factors located.")
             st.write("Maternal and paternal Rh antigen arrangements match standard biological boundaries.")
-            
-            st.html("""
-                <div class="status-box" style="background: linear-gradient(135deg, #143E25, #065F46); color: #00FFCC; border: 2px solid #00FFCC;">
-                    ✅ FETAL IMMUNE RISK: BIO-STABLE (15 / 100)
-                </div>
-            """)
+            st.html('<div class="status-box" style="background: linear-gradient(135deg, #143E25, #065F46); color: #00FFCC; border: 2px solid #00FFCC;">✅ FETAL IMMUNE RISK: BIO-STABLE (15 / 100)</div>')
 
 # ==================== TAB 2: EMBRYONIC TIMELINE ====================
 with tab2:
@@ -132,7 +121,6 @@ with tab2:
     
     st.divider()
     
-    # 100% Fixed Engine Structure with Closed Brackets
     fetal_engine = {
         1: {"size": "Poppy Seed", "neuro": 10, "skeletal": 5, "cardio": 5, "desc": "Neural Tube Formation and Early Cell Differentiation inside the embryonic sac."},
         2: {"size": "Raspberry", "neuro": 25, "skeletal": 15, "cardio": 30, "desc": "Heart Begins Beating and early limb buds appear as brain hemispheres develop."},
@@ -146,23 +134,20 @@ with tab2:
     }
     
     current_data = fetal_engine[selected_month]
-    
     t_col1, t_col2, t_col3 = st.columns([1, 1.2, 1.2])
     
     with t_col1:
-        st.html(f"""
-            <div class="metric-card">
-                <h4>📐 Volumetric Scaling Match</h4>
-                <h1 style='color: #00FFCC; margin: 15px 0; font-family: Orbitron;'>{current_data['size']}</h1>
-                <p style='color: #94A3B8;'>Real-time anatomic model comparison indicator.</p>
-            </div>
-        """)
-        
+        st.html(f"<div class='metric-card'><h4>📐 Volumetric Scaling Match</h4><h1 style='color: #00FFCC; margin: 15px 0; font-family: Orbitron;'>{current_data['size']}</h1><p style='color: #94A3B8;'>Real-time anatomic model comparison indicator.</p></div>")
     with t_col2:
         st.markdown("#### 🩺 Active Organ Development Logs")
         st.write(f"🧬 **Current Diagnostic Status:** {current_data['desc']}")
-            
     with t_col3:
         st.markdown("#### ⚡ Systemic Biological Maturity Bars")
         st.caption("Neural Architecture Complexity")
         st.progress(current_data['neuro'])
+        st.caption("Skeletal Osseous Calcification")
+        st.progress(current_data['skeletal'])
+        st.caption("Cardiovascular Volumetric Pump Efficiency")
+        st.progress(current_data['cardio'])
+
+# ==================== 💥 NEW ADVANCED TAB 3: AI DIAGNOSTIC SCANNER ====================
