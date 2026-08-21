@@ -8,34 +8,30 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- 🚀 CUSTOM CLEAN STYLING TO PREVENT BLACK TABS ---
+# --- 🚀 ULTRA-ADVANCED LUMINOUS NEON CSS STYLING ---
 st.markdown("""
-    <style>
-    /* Global Background Fix */
-    .stApp { background-color: #050811 !important; color: #E2E8F0 !important; }
-    
-    /* High Visibility Input Labels and Text Fix */
-    label[data-testid="stWidgetLabel"] p, .stMarkdown p, p, span, h1, h2, h3, h4 { color: #FFFFFF !important; }
-    .stCheckbox label p { color: #00FFCC !important; font-weight: bold !important; }
-    
-    /* Glowing Titles */
-    .main-title { font-size:45px; font-weight:900; color: #00FFCC !important; text-align: center; margin-bottom: 2px; text-shadow: 0 0 20px rgba(0, 255, 204, 0.6); }
-    .subtitle { font-size:18px; text-align: center; color: #94A3B8 !important; margin-bottom: 35px; text-align: center; }
-    
-    /* Solid Cards to stop overlapping text */
-    .feature-card { background-color: #0f172a; padding: 25px; border-radius: 16px; border: 1px solid #00FFCC; margin-bottom: 25px; }
-    .danger-card { background-color: #2D1A1E; padding: 20px; border-radius: 12px; border-left: 6px solid #FF4D4D; margin-bottom: 15px; border: 1px solid #FF4D4D; }
-    .safe-card { background-color: #142217; padding: 20px; border-radius: 12px; border-left: 6px solid #00FF66; margin-bottom: 15px; border: 1px solid #00FF66; }
-    .metric-card { background-color: #0b0f19; padding: 25px; border-radius: 14px; border: 1px solid #00FFCC; text-align: center; }
-    .lock-card { background-color: #0b132b; padding: 30px; border-radius: 20px; border: 2px solid #00FFCC; text-align: center; margin: auto; max-width: 500px; }
-    
-    /* Status Boxes */
-    .status-box { padding: 15px; border-radius: 12px; margin-top: 25px; font-weight: bold; font-size: 20px; text-align: center; border: 2px solid #00FFCC; background-color: #0b0f19; }
-    
-    /* Custom Tabs styling */
-    .stTabs [data-baseweb="tab"] { background-color: #0f172a !important; padding: 10px 24px !important; border-radius: 8px !important; color: #FFFFFF !important; margin-right: 5px; }
-    .stTabs [aria-selected="true"] { background-color: #00FFCC !important; color: #050811 !important; font-weight: bold !important; }
-    </style>
+<style>
+/* Global Background Fix */
+.stApp { background-color: #050811 !important; color: #E2E8F0 !important; }
+
+/* High Visibility Input Labels and Text Fix */
+label[data-testid="stWidgetLabel"] p, .stMarkdown p, p, span, h1, h2, h3, h4 { color: #FFFFFF !important; }
+.stCheckbox label p { color: #00FFCC !important; font-weight: bold !important; }
+
+/* Glowing Titles */
+.main-title { font-size:45px; font-weight:900; color: #00FFCC !important; text-align: center; margin-bottom: 2px; text-shadow: 0 0 20px rgba(0, 255, 204, 0.6); }
+.subtitle { font-size:18px; text-align: center; color: #94A3B8 !important; margin-bottom: 35px; }
+
+/* Solid Cards to stop overlapping text */
+.feature-card { background-color: #0f172a; padding: 25px; border-radius: 16px; border: 1px solid #00FFCC; margin-bottom: 25px; }
+.danger-card { background-color: #2D1A1E; padding: 20px; border-radius: 12px; border-left: 6px solid #FF4D4D; margin-bottom: 15px; border: 1px solid #FF4D4D; }
+.safe-card { background-color: #142217; padding: 20px; border-radius: 12px; border-left: 6px solid #00FF66; margin-bottom: 15px; border: 1px solid #00FF66; }
+.metric-card { background-color: #0b0f19; padding: 25px; border-radius: 14px; border: 1px solid #00FFCC; text-align: center; }
+.lock-card { background-color: #0b132b; padding: 30px; border-radius: 20px; border: 2px solid #00FFCC; text-align: center; margin: auto; max-width: 500px; }
+
+/* Status Boxes */
+.status-box { padding: 15px; border-radius: 12px; margin-top: 25px; font-weight: bold; font-size: 20px; text-align: center; border: 2px solid #00FFCC; background-color: #0b0f19; }
+</style>
 """, unsafe_allowed_html=True)
 
 # --- INITIALIZE SESSION STATE FOR SECURE AUTHENTICATION ---
@@ -49,11 +45,11 @@ if not st.session_state.authenticated:
     st.markdown('<div class="subtitle">Secure Genomic Bio-Vault & Predictive Clinical Interface</div>', unsafe_allowed_html=True)
     
     st.markdown("""
-        <div class="lock-card">
-            <h3 style='margin-bottom: 10px; color: #00FFCC;'>🔒 BIO-SECURITY INTERFACE</h3>
-            <p style='color: #94A3B8; font-size: 14px;'>HIPAA Compliant Dynamic Verification & Profile Registration Gate</p>
-        </div>
-    """, unsafe_allowed_html=True)
+<div class="lock-card">
+    <h3 style='margin-bottom: 10px; color: #00FFCC;'>🔒 BIO-SECURITY INTERFACE</h3>
+    <p style='color: #94A3B8; font-size: 14px;'>HIPAA Compliant Dynamic Verification & Profile Registration Gate</p>
+</div>
+""", unsafe_allowed_html=True)
     st.markdown("<div style='height: 25px;'></div>", unsafe_allowed_html=True)
     
     username = st.text_input("Enter Clinical Identity Key / Username", placeholder="e.g., sunita")
@@ -76,14 +72,25 @@ if not st.session_state.authenticated:
                 
     st.divider()
     st.markdown("""
-        <div style="background-color: #0b0f19; padding: 15px; border-radius: 10px; text-align: center; border: 1px dashed #FF4D4D; max-width: 800px; margin: auto;">
-            <span style="color: #FF4D4D; font-size: 13px;">🔒 SECURITY DEFENSE NOTICE: Unauthorized interception attempts are logged and purged by firewall cores.</span>
-        </div>
-    """, unsafe_allowed_html=True)
+<div style="background-color: #0b0f19; padding: 15px; border-radius: 10px; text-align: center; border: 1px dashed #FF4D4D; max-width: 800px; margin: auto;">
+    <span style="color: #FF4D4D; font-size: 13px;">🔒 SECURITY DEFENSE NOTICE: Unauthorized interception attempts are logged and purged by firewall cores.</span>
+</div>
+""", unsafe_allowed_html=True)
 
 # ==================== 🔓 UNLOCKED SYSTEM APPLICATION INTERFACE ====================
 else:
     st.markdown("<div style='text-align: right;'><span style='color: #00FFCC; font-weight: bold;'>👤 Session Active: User Authenticated</span></div>", unsafe_allowed_html=True)
+    
+    # Navigation menu inside sidebar without spacing risk logic
+    st.sidebar.markdown("### 🌐 Navigation Panel")
+    page_selection = st.sidebar.radio("Go to Project Phase:", [
+        "🧬 Phase 1: Genomic Compatibility", 
+        "🤰 Phase 2: Embryonic Growth Timeline", 
+        "📁 Phase 3: AI Diagnostic Scanner",
+        "🥗 Phase 4: Prenatal Nutrition Matrix"
+    ])
+    
+    st.sidebar.divider()
     if st.sidebar.button("🔒 LOGOUT SECURELY", use_container_width=True):
         st.session_state.authenticated = False
         st.rerun()
@@ -93,34 +100,22 @@ else:
     st.markdown('<div class="subtitle">Next-Gen Bio-Intelligence, Diagnostic Report Scanner & Gestational Risk Simulation Hub</div>', unsafe_allowed_html=True)
     st.divider()
 
-    # --- 🚀 4 PHASES USING BASIC TEXT TABS TO ENSURE VISIBILITY ---
-    tab1, tab2, tab3, tab4 = st.tabs([
-        "Phase 1: Genomic Compatibility", 
-        "Phase 2: Embryonic Growth Timeline", 
-        "Phase 3: AI Diagnostic Report Scanner",
-        "Phase 4: Prenatal Nutrition Matrix"
-    ])
-
-    # ==================== TAB 1: GENOMIC COMPATIBILITY ====================
-    with tab1:
+    # ==================== SELECTION 1: GENOMIC COMPATIBILITY ====================
+    if page_selection == "🧬 Phase 1: Genomic Compatibility":
         col1, col2 = st.columns([1.2, 1])
-
         with col1:
             st.markdown('<div class="feature-card"><h3 style="color:#00FFCC;">👥 Core Parental Phenotype Mapping</h3>Configure baseline biological sequences to simulate Mendelian chromosomal transmission.</div>', unsafe_allowed_html=True)
-            
             sub_col1, sub_col2 = st.columns(2)
             with sub_col1:
                 st.markdown("**Father's Bio-Markers**")
                 f_blood = st.selectbox("Father's Blood Group Type", ["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"], key="f_b")
                 f_eye = st.selectbox("Father's Iris Allele Expression", ["Brown (Dominant)", "Blue (Recessive)", "Green (Recessive)"], key="f_e")
                 father_stress = st.slider("Father's Cortisol Strain (Daily Stress Index)", 1, 10, 4)
-            
             with sub_col2:
                 st.markdown("**Mother's Bio-Markers**")
                 m_blood = st.selectbox("Mother's Blood Group Type", ["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"], key="m_b")
                 m_eye = st.selectbox("Mother's Iris Allele Expression", ["Brown (Dominant)", "Blue (Recessive)", "Green (Recessive)"], key="m_e")
                 mother_sleep = st.slider("Mother's Sleep Optimization Scale (Hours/Night)", 4, 10, 8)
-
             st.divider()
             st.markdown("#### 🧬 Real-time Epigenetic Mutation Profile")
             mutation_resistance = 100 - (father_stress * 5) + (mother_sleep * 2)
@@ -128,28 +123,21 @@ else:
                 st.success(f"🛡️ DNA Integrity Score: {mutation_resistance:.1f}% (Excellent) — Low probability of anomalies.")
             else:
                 st.warning(f"⚡ DNA Integrity Score: {mutation_resistance:.1f}% (Sub-Optimal) — High cortisol indices detected.")
-                
             st.divider()
             st.markdown("#### 🏁 Automated Progeny Trait Prediction Grid")
-            
             g_father = "B" if "Brown" in f_eye else "b"
             g_mother = "B" if "Brown" in m_eye else "b"
-            
             punnett_data = {
                 "Maternal / Paternal": [f"Father Allele: {g_father}", f"Father Allele: {g_father}"],
                 f"Mother Allele: {g_mother}": [f"{g_father}{g_mother} (Brown)", f"{g_father}{g_mother} (Brown)"],
-                "Mother Allele: b": [f"{g_father}b (Brown)" if g_father == "B" else "bb (Blue/Green)", 
-                                     f"{g_father}b (Brown)" if g_father == "B" else "bb (Blue/Green)"]
+                "Mother Allele: b": [f"{g_father}b (Brown)" if g_father == "B" else "bb (Blue/Green)", f"{g_father}b (Brown)" if g_father == "B" else "bb (Blue/Green)"]
             }
             df_punnett = pd.DataFrame(punnett_data)
             st.table(df_punnett)
-
         with col2:
             st.markdown('<div class="feature-card"><h3 style="color:#00FFCC;">🚨 Real-time Bio-Compatibility Shield</h3>Algorithmic screening for Rh incompatibility matrix and anti-body aggregation triggers.</div>', unsafe_allowed_html=True)
-            
             is_father_pos = "+" in f_blood
             is_mother_pos = "+" in m_blood
-            
             if (not is_mother_pos) and is_father_pos:
                 st.error("🔴 CRITICAL IMMUNOLOGICAL DISCORDANCE DETECTED: Rh Incompatibility Active.")
                 st.write("The mother is Rh-Negative and the father is Rh-Positive.")
@@ -159,5 +147,10 @@ else:
                 st.write("Both maternal and paternal Rh factors are fully compatible.")
                 st.markdown('<div class="status-box" style="color: #00FFCC; border-color: #00FFCC;">✅ IMMUNE RISK: SAFE (15 / 100)</div>', unsafe_allowed_html=True)
 
-    # ==================== TAB 2: EMBRYONIC TIMELINE ====================
-    with tab2:
+    # ==================== SELECTION 2: EMBRYONIC TIMELINE ====================
+    if page_selection == "🤰 Phase 2: Embryonic Growth Timeline":
+        st.markdown('<div class="feature-card"><h3 style="color:#00FFCC;">🤰 Interactive Fetal Organic Development Matrix</h3>Simulate fetal organogenesis progress, structural calcification, and systemic development vectors.</div>', unsafe_allowed_html=True)
+        st.markdown("#### 📆 Track Gestational Progression Metrics")
+        selected_month = st.slider("Adjust timeline controller to see milestones inside the womb:", min_value=1, max_value=9, value=3, step=1, format="Month %d")
+        st.divider()
+        fetal_engine = {
