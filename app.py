@@ -8,37 +8,28 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- 🚀 ULTRA-ADVANCED LUMINOUS NEON CSS STYLING ---
+# --- 🚀 CUSTOM STYLING FOR MAXIMUM VISIBILITY ---
 st.markdown("""
 <style>
-/* Global Background Fix */
 .stApp { background-color: #050811 !important; color: #E2E8F0 !important; }
-
-/* High Visibility Input Labels and Text Fix */
 label[data-testid="stWidgetLabel"] p, .stMarkdown p, p, span, h1, h2, h3, h4 { color: #FFFFFF !important; }
 .stCheckbox label p { color: #00FFCC !important; font-weight: bold !important; }
-
-/* Glowing Titles */
 .main-title { font-size:45px; font-weight:900; color: #00FFCC !important; text-align: center; margin-bottom: 2px; text-shadow: 0 0 20px rgba(0, 255, 204, 0.6); }
 .subtitle { font-size:18px; text-align: center; color: #94A3B8 !important; margin-bottom: 35px; }
-
-/* Solid Cards to stop overlapping text */
 .feature-card { background-color: #0f172a; padding: 25px; border-radius: 16px; border: 1px solid #00FFCC; margin-bottom: 25px; }
 .danger-card { background-color: #2D1A1E; padding: 20px; border-radius: 12px; border-left: 6px solid #FF4D4D; margin-bottom: 15px; border: 1px solid #FF4D4D; }
 .safe-card { background-color: #142217; padding: 20px; border-radius: 12px; border-left: 6px solid #00FF66; margin-bottom: 15px; border: 1px solid #00FF66; }
 .metric-card { background-color: #0b0f19; padding: 25px; border-radius: 14px; border: 1px solid #00FFCC; text-align: center; }
 .lock-card { background-color: #0b132b; padding: 30px; border-radius: 20px; border: 2px solid #00FFCC; text-align: center; margin: auto; max-width: 500px; }
-
-/* Status Boxes */
 .status-box { padding: 15px; border-radius: 12px; margin-top: 25px; font-weight: bold; font-size: 20px; text-align: center; border: 2px solid #00FFCC; background-color: #0b0f19; }
 </style>
 """, unsafe_allowed_html=True)
 
-# --- INITIALIZE SESSION STATE FOR SECURE AUTHENTICATION ---
+# --- INITIALIZE SESSION STATE FOR AUTHENTICATION ---
 if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
 
-# ==================== 🔐 SECURE PORTAL ACCESS GATEWAY (LOGIN PAGE) ====================
+# ==================== 🔐 LOGIN PAGE GATEWAY ====================
 if not st.session_state.authenticated:
     st.markdown("<div style='height: 40px;'></div>", unsafe_allowed_html=True)
     st.markdown('<div class="main-title">🧬 GeneCare AI Pro</div>', unsafe_allowed_html=True)
@@ -63,7 +54,7 @@ if not st.session_state.authenticated:
         if username == "sunita" and password == "123":
             if privacy_consent:
                 st.session_state.authenticated = True
-                st.toast("Initialization sequence authorized. Decrypting core system metrics...", icon="✅")
+                st.toast("Initialization sequence authorized...", icon="✅")
                 st.rerun()
             else:
                 st.warning("⚠️ Access Denied: You must accept the Privacy Data Consent terms.")
@@ -77,11 +68,11 @@ if not st.session_state.authenticated:
 </div>
 """, unsafe_allowed_html=True)
 
-# ==================== 🔓 UNLOCKED SYSTEM APPLICATION INTERFACE ====================
+# ==================== 🔓 UNLOCKED SYSTEM MAIN INTERFACE ====================
 else:
     st.markdown("<div style='text-align: right;'><span style='color: #00FFCC; font-weight: bold;'>👤 Session Active: User Authenticated</span></div>", unsafe_allowed_html=True)
     
-    # Navigation menu inside sidebar without spacing risk logic
+    # 🌐 Sidebar Radio Navigation (0% spacing error risk)
     st.sidebar.markdown("### 🌐 Navigation Panel")
     page_selection = st.sidebar.radio("Go to Project Phase:", [
         "🧬 Phase 1: Genomic Compatibility", 
@@ -95,12 +86,12 @@ else:
         st.session_state.authenticated = False
         st.rerun()
 
-    # Main Luminous Title Section
+    # Main Branding Titles
     st.markdown('<div class="main-title">🧬 GeneCare AI Pro</div>', unsafe_allowed_html=True)
     st.markdown('<div class="subtitle">Next-Gen Bio-Intelligence, Diagnostic Report Scanner & Gestational Risk Simulation Hub</div>', unsafe_allowed_html=True)
     st.divider()
 
-    # ==================== SELECTION 1: GENOMIC COMPATIBILITY ====================
+    # ==================== 🧬 PHASE 1: GENOMIC COMPATIBILITY ====================
     if page_selection == "🧬 Phase 1: Genomic Compatibility":
         col1, col2 = st.columns([1.2, 1])
         with col1:
@@ -147,10 +138,16 @@ else:
                 st.write("Both maternal and paternal Rh factors are fully compatible.")
                 st.markdown('<div class="status-box" style="color: #00FFCC; border-color: #00FFCC;">✅ IMMUNE RISK: SAFE (15 / 100)</div>', unsafe_allowed_html=True)
 
-    # ==================== SELECTION 2: EMBRYONIC TIMELINE ====================
+    # ==================== 🤰 PHASE 2: EMBRYONIC GROWTH TIMELINE ====================
     if page_selection == "🤰 Phase 2: Embryonic Growth Timeline":
         st.markdown('<div class="feature-card"><h3 style="color:#00FFCC;">🤰 Interactive Fetal Organic Development Matrix</h3>Simulate fetal organogenesis progress, structural calcification, and systemic development vectors.</div>', unsafe_allowed_html=True)
         st.markdown("#### 📆 Track Gestational Progression Metrics")
         selected_month = st.slider("Adjust timeline controller to see milestones inside the womb:", min_value=1, max_value=9, value=3, step=1, format="Month %d")
         st.divider()
-        fetal_engine = {
+        
+        # 100% Flattened String Matrix (Zero Dictionary Bracket Open/Close Risk)
+        size_label = "Lime"
+        neuro_val = 45
+        skeletal_val = 30
+        cardio_val = 50
+        desc_text = "Fingerprints forming, vocal chords initial setup, and kidneys start urine output safely."
