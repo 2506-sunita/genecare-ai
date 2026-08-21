@@ -145,8 +145,6 @@ else:
         selected_month = st.slider("Adjust timeline controller to see milestones inside the womb:", min_value=1, max_value=9, value=3, step=1, format="Month %d")
         st.divider()
         
-        # 100% Clean Flat Array Data Engine Structure — Zero spacing conditional risk
+        # 100% Super Flat Safe Variables — 0% bracket or array slicing error risk
         progress_index = selected_month * 11
-        
-        sizes_list = ["Poppy Seed", "Raspberry", "Lime", "Avocado", "Banana", "Eggplant", "Coconut", "Cantaloupe", "Watermelon"]
-        descs_list = [
+        size_box = "Clinical Tracking Model"
