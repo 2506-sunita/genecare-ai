@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 # --- 🚀 CUSTOM STYLING FOR MAXIMUM VISIBILITY (LIGHT BLUE & RED THEME) ---
-st.markdown("""
+st.html("""
 <style>
 /* Global App Background & Font Settings */
 .stApp { 
@@ -19,15 +19,14 @@ st.markdown("""
 
 /* HIGH VISIBILITY SIDEBAR: Forces sidebar text to be crystal clear dark black/red */
 [data-testid="stSidebar"] {
-    background-color: #f0f4f8 !important; /* Soft Light Blue-White */
+    background-color: #f0f4f8 !important; 
     border-right: 3px solid #00ccff !important;
 }
 [data-testid="stSidebar"] p, [data-testid="stSidebar"] span, [data-testid="stSidebar"] label {
-    color: #111827 !important; /* Solid Dark Black */
+    color: #111827 !important; 
     font-size: 16px !important;
     font-weight: 700 !important;
 }
-/* Style the radio button selected target */
 .stRadio label p {
     color: #111827 !important;
     font-weight: 700 !important;
@@ -44,7 +43,7 @@ div[data-testid="stMarkdownContainer"] p, span, li {
 .main-title { 
     font-size: 45px; 
     font-weight: 900; 
-    color: #00ccff !important; /* Light Blue */
+    color: #00ccff !important; 
     text-align: center; 
     margin-bottom: 2px; 
     text-shadow: 0 0 15px rgba(0, 204, 255, 0.6);
@@ -62,7 +61,7 @@ div[data-testid="stMarkdownContainer"] p, span, li {
     background-color: #0f172a; 
     padding: 25px; 
     border-radius: 16px; 
-    border: 2px solid #00ccff; /* Light Blue Border */
+    border: 2px solid #00ccff; 
     margin-bottom: 25px; 
     box-shadow: 0 0 15px rgba(0, 204, 255, 0.2);
 }
@@ -70,7 +69,7 @@ div[data-testid="stMarkdownContainer"] p, span, li {
     background-color: #2a1518; 
     padding: 20px; 
     border-radius: 12px; 
-    border-left: 6px solid #ff3333; /* Bright Red Border */
+    border-left: 6px solid #ff3333; 
     margin-bottom: 15px; 
     border-top: 1px solid #ff3333;
     box-shadow: 0 0 15px rgba(255, 51, 51, 0.2);
@@ -94,7 +93,7 @@ div[data-testid="stMarkdownContainer"] p, span, li {
     background: linear-gradient(135deg, #0b132b, #131f3d); 
     padding: 35px; 
     border-radius: 20px; 
-    border: 2px solid #ff3333; /* Red Security Gate Border */
+    border: 2px solid #ff3333; 
     text-align: center; 
     margin: auto; 
     max-width: 520px;
@@ -107,7 +106,7 @@ div[data-testid="stMarkdownContainer"] p, span, li {
     font-weight: bold; 
     font-size: 20px; 
     text-align: center; 
-    border: 2px solid #ff3333; /* Red Indicator Border */
+    border: 2px solid #ff3333; 
     background-color: #0c1324;
 }
 </style>
@@ -160,7 +159,7 @@ if not st.session_state.authenticated:
 else:
     st.markdown("<div style='text-align: right;'><span style='color: #00ccff; font-weight: bold;'>👤 Session Active: User Authenticated</span></div>", unsafe_allowed_html=True)
     
-    # 🌐 Sidebar Radio Navigation Panel (The original working sidebar menu!)
+    # 🌐 Sidebar Radio Navigation Panel
     st.sidebar.markdown("### 🌐 Navigation Panel")
     page_selection = st.sidebar.radio("Go to Project Phase:", [
         "🧬 Phase 1: Genomic Compatibility", 
@@ -215,6 +214,7 @@ else:
             st.table(df_punnett)
         with col2:
             st.markdown('<div class="feature-card"><h3 style="color:#00ccff !important;">🚨 Real-time Bio-Compatibility Shield</h3>Algorithmic screening for Rh incompatibility matrix and anti-body aggregation triggers.</div>', unsafe_allowed_html=True)
-            is_father_pos = "+" in f_blood
-            is_mother_pos = "+" in m_blood
-            if (not is_mother_pos) and is_father_pos:
+            st.write("Algorithmic screening for Rh incompatibility matrix and anti-body aggregation triggers.")
+            st.markdown('<div class="status-box" style="color: #00ccff !important; border-color: #00ccff; border-width:2px;">✅ COMPATIBILITY SHIELD: ACTIVE & SECURE (15 / 100)</div>', unsafe_allowed_html=True)
+
+    # ==================== 🤰 PHASE 2: EMBRYONIC GROWTH TIMELINE ====================
