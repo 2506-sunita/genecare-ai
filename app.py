@@ -8,7 +8,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- 🚀 CUSTOM STYLING FOR MAXIMUM VISIBILITY WITH st.html() ---
+# --- 🚀 CUSTOM STYLING WITH st.html() ---
 st.html("""
 <style>
 /* Global App Background & Font Settings */
@@ -17,7 +17,7 @@ st.html("""
     color: #ffffff !important;
 }
 
-/* HIGH VISIBILITY FIX: All critical labels and texts strictly forced to solid white */
+/* HIGH VISIBILITY FIX: All texts strictly forced to solid white */
 label[data-testid="stWidgetLabel"] p, .stMarkdown p, p, span, h1, h2, h3, h4, li { 
     color: #ffffff !important; 
     font-size: 16px !important;
@@ -54,7 +54,6 @@ label[data-testid="stWidgetLabel"] p, .stMarkdown p, p, span, h1, h2, h3, h4, li
     color: #94A3B8 !important; 
     margin-bottom: 35px; 
     font-weight: 500 !important;
-    text-align: center;
 }
 
 /* Advanced Card Glassmorphism Structures */
@@ -113,18 +112,14 @@ label[data-testid="stWidgetLabel"] p, .stMarkdown p, p, span, h1, h2, h3, h4, li
     background-color: #0c1324;
     text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
 }
-
-/* Radio button text adjustment fix */
-.stRadio label p {
-    color: #ffffff !important;
-    font-size: 16px !important;
-}
 </style>
 """)
 
-# --- INITIALIZE SESSION STATE FOR AUTHENTICATION ---
+# --- INITIALIZE SESSION STATE FOR AUTHENTICATION & PAGES ---
 if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
+if "current_page" not in st.session_state:
+    st.session_state.current_page = "Phase 1"
 
 # ==================== 🔐 SECURE PORTAL ACCESS GATEWAY (LOGIN PAGE) ====================
 if not st.session_state.authenticated:
@@ -169,16 +164,8 @@ if not st.session_state.authenticated:
 else:
     st.html("<div style='text-align: right;'><span style='color: #00FFCC; font-weight: bold;'>👤 Session Active: User Authenticated</span></div>")
     
-    # 🌐 Sidebar Radio Navigation (0% spacing error risk)
-    st.sidebar.markdown("### 🌐 Navigation Panel")
-    page_selection = st.sidebar.radio("Go to Project Phase:", [
-        "🧬 Phase 1: Genomic Compatibility", 
-        "🤰 Phase 2: Embryonic Growth Timeline", 
-        "📁 Phase 3: AI Diagnostic Scanner",
-        "🥗 Phase 4: Prenatal Nutrition Matrix"
-    ])
-    
-    st.sidebar.divider()
+    # Secure Sidebar Control Layout
+    st.sidebar.markdown("### 🔒 System Control")
     if st.sidebar.button("🔒 LOGOUT SECURELY", use_container_width=True):
         st.session_state.authenticated = False
         st.rerun()
@@ -188,8 +175,27 @@ else:
     st.html('<div class="subtitle">Next-Gen Bio-Intelligence, Diagnostic Report Scanner & Gestational Risk Simulation Hub</div>')
     st.divider()
 
-    # ==================== 🧬 PHASE 1: GENOMIC COMPATIBILITY ====================
-    if page_selection == "🧬 Phase 1: Genomic Compatibility":
+    # 🚀 4 PREMIUM CONTROLLER BUTTONS TO PREVENT ANY BLANK SCREEN RISK 🚀
+    st.markdown("#### 🌐 Select Platform Phase Module:")
+    btn_col1, btn_col2, btn_col3, btn_col4 = st.columns(4)
+    
+    with btn_col1:
+        if st.button("🧬 Phase 1: Genetics", use_container_width=True):
+            st.session_state.current_page = "Phase 1"
+    with btn_col2:
+        if st.button("🤰 Phase 2: Timeline", use_container_width=True):
+            st.session_state.current_page = "Phase 2"
+    with btn_col3:
+        if st.button("📁 Phase 3: AI Scanner", use_container_width=True):
+            st.session_state.current_page = "Phase 3"
+    with btn_col4:
+        if st.button("🥗 Phase 4: Nutrition", use_container_width=True):
+            st.session_state.current_page = "Phase 4"
+            
+    st.divider()
+
+    # ==================== 🧬 DISPLAY PHASE 1 CONTENT ====================
+    if st.session_state.current_page == "Phase 1":
         col1, col2 = st.columns([1.2, 1])
         with col1:
             st.html('<div class="feature-card"><h3 style="color:#00FFCC !important;">👥 Core Parental Phenotype Mapping</h3>Configure baseline biological sequences to simulate Mendelian chromosomal transmission.</div>')
@@ -228,7 +234,3 @@ else:
             is_mother_pos = "+" in m_blood
             if (not is_mother_pos) and is_father_pos:
                 st.error("🔴 CRITICAL IMMUNOLOGICAL DISCORDANCE DETECTED: Rh Incompatibility Active.")
-                st.write("The mother is Rh-Negative and the father is Rh-Positive.")
-                st.html('<div class="status-box" style="color: #FF4D4D !important; border-color: #FF4D4D;">🚨 IMMUNE RISK: CRITICAL (85 / 100)</div>')
-            else:
-                st.success("✅ GENOMIC COMPATIBILITY INDEX SECURE: No Rh Isolation factors located.")
