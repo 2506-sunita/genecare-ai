@@ -153,8 +153,8 @@ with tab2:
         for item in options:
             if "Retinol" in item:
                 st.html('<div class="danger-card"><strong>🚨 CRITICAL DANGER: Retinol</strong><br>Highly Teratogenic. Crosses the placental barrier effortlessly. High correlation with Congenital Retinoid Syndrome. Avoid completely.</div>')
-            elif "Salicylic" in item:
+            if "Salicylic" in item:
                 st.html('<div class="danger-card"><strong>⚠️ WARNING FLAG: Salicylic Acid</strong><br>Oral high-dose ingestion increases terminal bleeding risks during late trimesters. Avoid high systemic intake.</div>')
-            elif "Seafood" in item:
+            if "Seafood" in item:
                 st.html('<div class="danger-card"><strong>🚨 CONTAMINATION RISK: Raw Seafood</strong><br>Major risk of Listeria monocytogenes bacterial infections. Threatens fetal development. Consume fully cooked items only.</div>')
-            elif "Dairy" in item:
+            if "Dairy" in item:
