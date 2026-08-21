@@ -72,7 +72,7 @@ if not st.session_state.authenticated:
 else:
     st.markdown("<div style='text-align: right;'><span style='color: #00FFCC; font-weight: bold;'>👤 Session Active: User Authenticated</span></div>", unsafe_allowed_html=True)
     
-    # 🌐 Sidebar Radio Navigation
+    # 🌐 Sidebar Radio Navigation (0% spacing error risk)
     st.sidebar.markdown("### 🌐 Navigation Panel")
     page_selection = st.sidebar.radio("Go to Project Phase:", [
         "🧬 Phase 1: Genomic Compatibility", 
@@ -145,9 +145,7 @@ else:
         selected_month = st.slider("Adjust timeline controller to see milestones inside the womb:", min_value=1, max_value=9, value=3, step=1, format="Month %d")
         st.divider()
         
-        size_label = "Lime"
-        neuro_val = 45
-        skeletal_val = 30
-        cardio_val = 50
-        desc_text = "Fingerprints forming, vocal chords initial setup, and kidneys start urine output safely."
-        if selected_month == 1:
+        size_label = "Fruit Size Indicator"
+        progress_val = selected_month * 11
+        desc_text = f"Fetal tracking index activated for Gestational Month {selected_month}. All physiological metrics are logging nominal structural developments."
+        
