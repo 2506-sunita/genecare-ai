@@ -27,7 +27,7 @@ st.html('<div class="main-title">🧬 GeneCare AI: Clinical Allele Predictor</di
 st.html('<div class="subtitle">Advanced Pre-Conception & Prenatal Bio-Intelligence Simulation Platform</div>')
 st.divider()
 
-# --- tabs for clean layout ---
+# --- Tabs for clean layout ---
 tab1, tab2 = st.tabs(["🧬 Phase 1: Pre-Conception Screening", "🤰 Phase 2: Prenatal Development Timeline"])
 
 with tab1:
@@ -151,8 +151,10 @@ with tab2:
     if options:
         st.markdown("##### 🔬 Compound Molecular Analysis Output:")
         for item in options:
-            if item == "Retinol / Retinoids (Skincare)":
-                st.html(f'<div class="danger-card"><strong>🚨 CRITICAL DANGER: {item}</strong><br>Highly Teratogenic. Crosses the placental barrier effortlessly. High correlation with Congenital Retinoid Syndrome, causing cranial-facial and central nervous system defects. Avoid completely.</div>')
-            elif item == "Salicylic Acid (High Dose)":
-                st.html(f'<div class="danger-card"><strong>⚠️ WARNING FLAG: {item}</strong><br>Oral high-dose ingestion increases terminal bleeding risks during late-stage trimesters. Switch to safe topical alternatives like glycolic acid.</div>')
-            elif item == "Raw Seafood / Sushi":
+            if "Retinol" in item:
+                st.html('<div class="danger-card"><strong>🚨 CRITICAL DANGER: Retinol</strong><br>Highly Teratogenic. Crosses the placental barrier effortlessly. High correlation with Congenital Retinoid Syndrome. Avoid completely.</div>')
+            elif "Salicylic" in item:
+                st.html('<div class="danger-card"><strong>⚠️ WARNING FLAG: Salicylic Acid</strong><br>Oral high-dose ingestion increases terminal bleeding risks during late trimesters. Avoid high systemic intake.</div>')
+            elif "Seafood" in item:
+                st.html('<div class="danger-card"><strong>🚨 CONTAMINATION RISK: Raw Seafood</strong><br>Major risk of Listeria monocytogenes bacterial infections. Threatens fetal development. Consume fully cooked items only.</div>')
+            elif "Dairy" in item:
