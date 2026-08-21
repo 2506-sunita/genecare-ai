@@ -28,8 +28,9 @@ st.html('<div class="subtitle">Advanced Pre-Conception & Prenatal Bio-Intelligen
 st.divider()
 
 # --- Tabs for clean layout ---
-tab1, tab2 = st.tabs(["🧬 Phase 1: Pre-Conception Screening", "🤰 Phase 2: Prenatal Development Timeline"])
+tab1, tab2, tab3 = st.tabs(["🧬 Phase 1: Genetic Screening", "🤰 Phase 2: Fetal Month Timeline", "🛡️ Phase 3: Teratogenic Chemical Guard"])
 
+# ==================== TAB 1: GENETIC SCREENING ====================
 with tab1:
     col1, col2 = st.columns([1.2, 1])
 
@@ -90,8 +91,9 @@ with tab1:
                 </div>
             """)
 
+# ==================== TAB 2: FETAL TIMELINE ====================
 with tab2:
-    st.html('<div class="feature-card"><h3>🤰 Interactive Fetal Organic Development Matrix</h3>Track embryonic progress and filter out harmful toxic compounds month-by-month.</div>')
+    st.html('<div class="feature-card"><h3>🤰 Interactive Fetal Organic Development Matrix</h3>Track embryonic progress and organic growth diagnostics month-by-month.</div>')
     
     st.subheader("📆 Track Gestational Progression")
     selected_month = st.slider("Drag the slider to change pregnancy month and observe real-time physiological updates in the womb:", min_value=1, max_value=9, value=3, step=1, format="Month %d")
@@ -136,25 +138,17 @@ with tab2:
         st.progress(current_data['skeletal'])
         st.caption("Cardiovascular Pump Efficiency")
         st.progress(current_data['cardio'])
-        
-    st.divider()
+
+# ==================== TAB 3: TERATOGEN CHEMICAL GUARD ====================
+with tab3:
+    st.html('<div class="feature-card"><h3>🛡️ Teratogenic Chemical Active Diagnostic Guard</h3>Clinical molecular safety reports for prenatal product verification.</div>')
     
-    # --- TERATOGEN ACTIVE CHECK PANEL ---
-    st.subheader("🛡️ Teratogenic Chemical Active Diagnostic Guard")
-    st.write("Select common lifestyle or skincare ingredients to simulate placenta barrier filtration safety checks:")
+    st.markdown("##### 🔬 Click below to analyze compound safety clearance boundaries:")
     
-    options = st.multiselect(
-        "Choose compounds or substances to analyze safety clearance boundaries:",
-        ["Retinol / Retinoids (Skincare)", "Salicylic Acid (High Dose)", "Raw Seafood / Sushi", "Unpasteurized Dairy", "Folic Acid Supplements"]
-    )
+    # Simple independent boxes—zero complex loop spacing logic
+    st.html('<div class="danger-card"><strong>🚨 CRITICAL DANGER: Retinol / Retinoids (Skincare)</strong><br>Highly Teratogenic. Crosses the placental barrier effortlessly. High correlation with Congenital Retinoid Syndrome, causing severe cranial-facial and central nervous system defects. Avoid completely during all trimesters.</div>')
     
-    if options:
-        st.markdown("##### 🔬 Compound Molecular Analysis Output:")
-        for item in options:
-            if "Retinol" in item:
-                st.html('<div class="danger-card"><strong>🚨 CRITICAL DANGER: Retinol</strong><br>Highly Teratogenic. Crosses the placental barrier effortlessly. High correlation with Congenital Retinoid Syndrome. Avoid completely.</div>')
-            if "Salicylic" in item:
-                st.html('<div class="danger-card"><strong>⚠️ WARNING FLAG: Salicylic Acid</strong><br>Oral high-dose ingestion increases terminal bleeding risks during late trimesters. Avoid high systemic intake.</div>')
-            if "Seafood" in item:
-                st.html('<div class="danger-card"><strong>🚨 CONTAMINATION RISK: Raw Seafood</strong><br>Major risk of Listeria monocytogenes bacterial infections. Threatens fetal development. Consume fully cooked items only.</div>')
-            if "Dairy" in item:
+    st.html('<div class="danger-card"><strong>⚠️ WARNING FLAG: Salicylic Acid (High Dose)</strong><br>Oral high-dose ingestion increases terminal bleeding risks and delays labor cycles during late trimesters. Switch to safe topical options like glycolic or lactic acids.</div>')
+    
+    st.html('<div class="danger-card"><strong>🚨 CONTAMINATION RISK: Raw Seafood / Sushi</strong><br>Extreme risk of Listeria monocytogenes bacterial food contamination. Threatens embryonic survival and can cause acute spontaneous termination. Consume fully cooked food matrices only.</div>')
+    
