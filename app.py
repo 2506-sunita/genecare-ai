@@ -8,50 +8,84 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- Premium Cyberpunk Neon CSS Styling ---
+# --- 🚀 ULTRA-ADVANCED LUMINOUS NEON CSS STYLING ---
 st.html("""
     <style>
-    .main-title { font-size:45px; font-weight:800; color: #00FFCC; text-align: center; margin-bottom: 5px; text-shadow: 0 0 10px #00FFCC; }
-    .subtitle { font-size:18px; text-align: center; color: #A0AEC0; margin-bottom: 30px; }
-    .feature-card { background-color: #161B22; padding: 25px; border-radius: 15px; border-left: 6px solid #00FFCC; margin-bottom: 25px; color: #FFFFFF; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-    .status-box { padding: 20px; border-radius: 10px; margin-top: 25px; font-weight: bold; font-size: 20px; text-align: center; font-family: Arial; }
-    .metric-card { background-color: #1A202C; padding: 25px; border-radius: 12px; border-top: 5px solid #00FFCC; text-align: center; color: #FFFFFF; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-    .danger-card { background-color: #2D1A1E; padding: 18px; border-radius: 10px; border-left: 6px solid #FF4D4D; margin-bottom: 15px; color: #FFFFFF; }
-    .safe-card { background-color: #1A2D22; padding: 18px; border-radius: 10px; border-left: 6px solid #00FF66; margin-bottom: 15px; color: #FFFFFF; }
-    h3, h4 { color: #00FFCC !important; }
+    @import url('https://googleapis.com');
+    
+    /* Global Styles */
+    .stApp { background-color: #050811 !important; font-family: 'Rajdhani', sans-serif; color: #E2E8F0; }
+    
+    /* Glowing Headers */
+    .main-title { font-family: 'Orbitron', sans-serif; font-size:48px; font-weight:900; color: #00FFCC; text-align: center; margin-bottom: 2px; text-shadow: 0 0 20px rgba(0, 255, 204, 0.6), 0 0 40px rgba(0, 255, 204, 0.2); }
+    .subtitle { font-size:19px; text-align: center; color: #94A3B8; margin-bottom: 35px; letter-spacing: 1px; }
+    
+    /* Neon Glowing Cards */
+    .feature-card { background: linear-gradient(145deg, #0f172a, #1e293b); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 255, 204, 0.3); margin-bottom: 25px; box-shadow: 0 0 15px rgba(0, 255, 204, 0.1); color: #FFFFFF; }
+    .danger-card { background: linear-gradient(145deg, #1e1b1b, #2d1a1e); padding: 20px; border-radius: 12px; border-left: 6px solid #FF4D4D; border-top: 1px solid rgba(255, 77, 77, 0.2); margin-bottom: 15px; color: #FFFFFF; box-shadow: 0 0 15px rgba(255, 77, 77, 0.1); }
+    .safe-card { background: linear-gradient(145deg, #142217, #1a2d22); padding: 20px; border-radius: 12px; border-left: 6px solid #00FF66; border-top: 1px solid rgba(0, 255, 102, 0.2); margin-bottom: 15px; color: #FFFFFF; box-shadow: 0 0 15px rgba(0, 255, 102, 0.1); }
+    
+    /* Status Analytics Boxes */
+    .status-box { padding: 22px; border-radius: 12px; margin-top: 25px; font-family: 'Orbitron', sans-serif; font-weight: bold; font-size: 22px; text-align: center; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+    .metric-card { background-color: #0b0f19; padding: 25px; border-radius: 14px; border: 1px solid rgba(0, 255, 204, 0.2); border-top: 6px solid #00FFCC; text-align: center; color: #FFFFFF; }
+    
+    /* Typography Overrides */
+    h3, h4 { color: #00FFCC !important; font-family: 'Orbitron', sans-serif; letter-spacing: 0.5px; }
+    strong { color: #F59E0B !important; } /* Golden Highlights */
+    
+    /* Custom Navigation Tabs styling */
+    .stTabs [data-baseweb="tab-list"] { gap: 12px; }
+    .stTabs [data-baseweb="tab"] { background-color: #0f172a; border: 1px solid rgba(255,255,255,0.1); padding: 10px 24px; border-radius: 8px; color: #94A3B8; font-weight: bold; }
+    .stTabs [aria-selected="true"] { background-color: #00FFCC !important; color: #050811 !important; font-weight: bold; box-shadow: 0 0 15px rgba(0, 255, 204, 0.4); }
     </style>
 """)
 
-# Main Title Section
-st.html('<div class="main-title">🧬 GeneCare AI: Clinical Allele Predictor</div>')
-st.html('<div class="subtitle">Advanced Pre-Conception & Prenatal Bio-Intelligence Simulation Platform</div>')
+# Main Luminous Title Section
+st.html('<div class="main-title">🧬 GeneCare AI Pro</div>')
+st.html('<div class="subtitle">Enterprise Bio-Intelligence & Advanced Fetal Risk Simulation Architecture</div>')
 st.divider()
 
-# --- Tabs for clean layout ---
-tab1, tab2, tab3 = st.tabs(["🧬 Phase 1: Genetic Screening", "🤰 Phase 2: Fetal Month Timeline", "🛡️ Phase 3: Teratogenic Chemical Guard"])
+# --- 🚀 4 ADVANCED STRUCTURAL PHASES (TABS) ---
+tab1, tab2, tab3, tab4 = st.tabs([
+    "🧬 Phase 1: Genomic Compatibility", 
+    "🤰 Phase 2: Embryonic Growth Timeline", 
+    "🛡️ Phase 3: Teratogenic Vision Shield",
+    "🥗 Phase 4: Prenatal Nutrition Matrix"
+])
 
-# ==================== TAB 1: GENETIC SCREENING ====================
+# ==================== 🛠️ TAB 1: GENOMIC COMPATIBILITY ====================
 with tab1:
     col1, col2 = st.columns([1.2, 1])
 
     with col1:
-        st.html('<div class="feature-card"><h3>👥 Core Parental Phenotype Mapping</h3>Provide initial biological baseline configurations below to simulate genetic outcomes.</div>')
+        st.html('<div class="feature-card"><h3>👥 Core Parental Phenotype Mapping</h3>Configure baseline biological sequences to simulate Mendelian chromosomal transmission.</div>')
         
         sub_col1, sub_col2 = st.columns(2)
         with sub_col1:
-            st.markdown("👨 **Father's Bio-Markers**")
-            f_blood = st.selectbox("Father's Blood Group", ["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"], key="f_b")
-            f_eye = st.selectbox("Father's Eye Color Allele", ["Brown (Dominant)", "Blue (Recessive)", "Green (Recessive)"], key="f_e")
+            st.markdown("👨 **Father's Bio-Markers (Allele Set)**")
+            f_blood = st.selectbox("Father's Blood Group Type", ["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"], key="f_b")
+            f_eye = st.selectbox("Father's Iris Allele Expression", ["Brown (Dominant)", "Blue (Recessive)", "Green (Recessive)"], key="f_e")
+            father_stress = st.slider("Father's Cortisol Strain (Daily Stress Index)", 1, 10, 4)
         
         with sub_col2:
-            st.markdown("👩 **Mother's Bio-Markers**")
-            m_blood = st.selectbox("Mother's Blood Group", ["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"], key="m_b")
-            m_eye = st.selectbox("Mother's Eye Color Allele", ["Brown (Dominant)", "Blue (Recessive)", "Green (Recessive)"], key="m_e")
+            st.markdown("👩 **Mother's Bio-Markers (Allele Set)**")
+            m_blood = st.selectbox("Mother's Blood Group Type", ["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"], key="m_b")
+            m_eye = st.selectbox("Mother's Iris Allele Expression", ["Brown (Dominant)", "Blue (Recessive)", "Green (Recessive)"], key="m_e")
+            mother_sleep = st.slider("Mother's Sleep Optimization Scale (Hours/Night)", 4, 10, 8)
 
         st.divider()
         
-        st.subheader("🏁 Live Progeny Trait Prediction Grid")
-        st.caption("This grid calculates the Mendelian probability matrix of the child's physical traits instantly based on parental chromosomes.")
+        # --- 💥 NEW LOGICAL ATTRACTION: EPIGENETIC MUTATION RESISTANCE RESISTANCE ---
+        st.subheader("🧬 Real-time Epigenetic Mutation Profile")
+        mutation_resistance = 100 - (father_stress * 5) + (mother_sleep * 2)
+        if mutation_resistance > 80:
+            st.success(f"🛡️ **DNA Integrity Score: {mutation_resistance:.1f}% (Excellent)** — Low probability of stress-induced methylation anomalies.")
+        else:
+            st.warning(f"⚡ **DNA Integrity Score: {mutation_resistance:.1f}% (Sub-Optimal)** — High parental cortisol indices detected. Fetal cellular adaptive systems may experience stress acceleration.")
+            
+        st.divider()
+        st.subheader("🏁 Automated Progeny Trait Prediction Grid")
+        st.caption("Calculates the structural Mendelian cross-matrix variables for phenotypic expression probabilities.")
         
         g_father = "B" if "Brown" in f_eye else "b"
         g_mother = "B" if "Brown" in m_eye else "b"
@@ -66,37 +100,37 @@ with tab1:
         st.table(df_punnett)
 
     with col2:
-        st.html('<div class="feature-card"><h3>🚨 Real-time Bio-Compatibility Risk Shield</h3>Automated screening for Rh incompatibility and structural genetic variance.</div>')
+        st.html('<div class="feature-card"><h3>🚨 Real-time Bio-Compatibility Shield</h3>Algorithmic screening for Rh incompatibility matrix and anti-body aggregation triggers.</div>')
         
         is_father_pos = "+" in f_blood
         is_mother_pos = "+" in m_blood
         
         if (not is_mother_pos) and is_father_pos:
-            st.error("🔴 CRITICAL WARNING DETECTED: Rh Incompatibility Condition Imminent.")
-            st.write("**Medical Reason:** The mother is Rh-Negative and the father is Rh-Positive. The maternal immune system might generate antibodies against fetal red blood cells, risking complications.")
-            st.info("📌 **Action Plan:** Anti-D (RhoGAM) immunoglobulin injections must be scheduled during week 28 of pregnancy and within 72 hours of delivery to ensure absolute safety.")
+            st.error("🔴 CRITICAL IMMUNOLOGICAL DISCORDANCE DETECTED: Rh Incompatibility Condition Active.")
+            st.write("**Clinical Manifestation:** The mother is **Rh-Negative** and the father is **Rh-Positive**. Fetal erythroblastosis risks are heightened due to potential maternal anti-Rh antibody generation.")
+            st.info("📌 **Mandatory Preventive Action:** Administer **Anti-D (RhoGAM)** immunoglobulin prophylaxis at gestational week 28 and post-delivery within 72 hours.")
             
             st.html("""
-                <div class="status-box" style="background-color: #4A1A1D; color: #FF4D4D; border: 2px solid #FF4D4D;">
-                    🚨 CLINICAL RISK ENGINE VALUE: CRITICAL ALERT LEVEL (85 / 100)
+                <div class="status-box" style="background: linear-gradient(135deg, #4A1A1D, #7F1D1D); color: #FF4D4D; border: 2px solid #FF4D4D; text-shadow: 0 0 10px #FF4D4D;">
+                    🚨 FETAL IMMUNE RISK: CRITICAL (85 / 100)
                 </div>
             """)
         else:
-            st.success("✅ BIO-COMPATIBILITY INDEX SECURE: No Rh Incompatibility detected.")
-            st.write("Both maternal and paternal Rh factor combinations are fully compatible for a safe pregnancy cycle.")
+            st.success("✅ GENOMIC COMPATIBILITY INDEX SECURE: No Rh Isolation factors located.")
+            st.write("Maternal and paternal Rh antigen arrangements match standard biological boundaries for a risk-free gestation cycle.")
             
             st.html("""
-                <div class="status-box" style="background-color: #1A4A2B; color: #00FFCC; border: 2px solid #00FFCC;">
-                    ✅ CLINICAL RISK ENGINE VALUE: BIO-STABLE & SECURE (15 / 100)
+                <div class="status-box" style="background: linear-gradient(135deg, #143E25, #065F46); color: #00FFCC; border: 2px solid #00FFCC; text-shadow: 0 0 10px #00FFCC;">
+                    ✅ FETAL IMMUNE RISK: BIO-STABLE (15 / 100)
                 </div>
             """)
 
-# ==================== TAB 2: FETAL TIMELINE ====================
+# ==================== 🤰 TAB 2: EMBRYONIC TIMELINE ====================
 with tab2:
-    st.html('<div class="feature-card"><h3>🤰 Interactive Fetal Organic Development Matrix</h3>Track embryonic progress and organic growth diagnostics month-by-month.</div>')
+    st.html('<div class="feature-card"><h3>🤰 Interactive Fetal Organic Development Matrix</h3>Simulate fetal organogenesis progress, structural calcification, and systemic development vectors.</div>')
     
-    st.subheader("📆 Track Gestational Progression")
-    selected_month = st.slider("Drag the slider to change pregnancy month and observe real-time physiological updates in the womb:", min_value=1, max_value=9, value=3, step=1, format="Month %d")
+    st.subheader("📆 Track Gestational Progression Metrics")
+    selected_month = st.slider("Adjust tracking timeline controller to calculate systemic organ milestones inside the womb:", min_value=1, max_value=9, value=3, step=1, format="Month %d")
     
     st.divider()
     
@@ -108,47 +142,3 @@ with tab2:
         5: {"size": "Banana (25.6 cm) 🍌", "organs": ["Hearing Functions Active", "Vernix Caseosa Coats Skin", "Maternal Movements Felt"], "neuro": 75, "skeletal": 60, "cardio": 80},
         6: {"size": "Eggplant (35.6 cm) 🍆", "organs": ["Lungs Produce Surfactant", "Taste Buds Fully Formed", "Footprints & Handprints Set"], "neuro": 85, "skeletal": 70, "cardio": 85},
         7: {"size": "Coconut (39.9 cm) 🥥", "organs": ["Eyelids Open & Close", "Brain Surface Folds Developing", "Regulating Body Temperature"], "neuro": 90, "skeletal": 80, "cardio": 90},
-        8: {"size": "Cantaloupe (46.2 cm) 🍈", "organs": ["Rapid Brain Growth", "Bones Harden (Except Skull)", "Fat Deposition Under Skin"], "neuro": 95, "skeletal": 90, "cardio": 95},
-        9: {"size": "Watermelon (50.7 cm) 🍉", "organs": ["Full Term Lung Maturity", "Coordinating Sucking/Swallowing", "Immune System Boost From Mom"], "neuro": 100, "skeletal": 100, "cardio": 100}
-    }
-    
-    current_data = fetal_data_engine[selected_month]
-    
-    t_col1, t_col2, t_col3 = st.columns([1, 1.2, 1.2])
-    
-    with t_col1:
-        st.html(f"""
-            <div class="metric-card">
-                <h4>📏 Relative Fetal Size</h4>
-                <h2 style='color: #00FFCC; margin: 15px 0;'>{current_data['size']}</h2>
-                <p style='color: #A0AEC0;'>Month-to-month volumetric macro scaling indicator.</p>
-            </div>
-        """)
-        
-    with t_col2:
-        st.markdown("#### 🩺 Active Organ Development Logs")
-        for organ in current_data['organs']:
-            st.markdown(f"🧬 **{organ}**")
-            
-    with t_col3:
-        st.markdown("#### ⚡ Systemic Biological Maturity Bars")
-        st.caption("Neural Complexity")
-        st.progress(current_data['neuro'])
-        st.caption("Skeletal Calcification")
-        st.progress(current_data['skeletal'])
-        st.caption("Cardiovascular Pump Efficiency")
-        st.progress(current_data['cardio'])
-
-# ==================== TAB 3: TERATOGEN CHEMICAL GUARD ====================
-with tab3:
-    st.html('<div class="feature-card"><h3>🛡️ Teratogenic Chemical Active Diagnostic Guard</h3>Clinical molecular safety reports for prenatal product verification.</div>')
-    
-    st.markdown("##### 🔬 Click below to analyze compound safety clearance boundaries:")
-    
-    # Simple independent boxes—zero complex loop spacing logic
-    st.html('<div class="danger-card"><strong>🚨 CRITICAL DANGER: Retinol / Retinoids (Skincare)</strong><br>Highly Teratogenic. Crosses the placental barrier effortlessly. High correlation with Congenital Retinoid Syndrome, causing severe cranial-facial and central nervous system defects. Avoid completely during all trimesters.</div>')
-    
-    st.html('<div class="danger-card"><strong>⚠️ WARNING FLAG: Salicylic Acid (High Dose)</strong><br>Oral high-dose ingestion increases terminal bleeding risks and delays labor cycles during late trimesters. Switch to safe topical options like glycolic or lactic acids.</div>')
-    
-    st.html('<div class="danger-card"><strong>🚨 CONTAMINATION RISK: Raw Seafood / Sushi</strong><br>Extreme risk of Listeria monocytogenes bacterial food contamination. Threatens embryonic survival and can cause acute spontaneous termination. Consume fully cooked food matrices only.</div>')
-    
