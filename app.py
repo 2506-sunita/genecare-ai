@@ -8,8 +8,8 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- 🚀 CUSTOM STYLING FOR MAXIMUM VISIBILITY (FIXED SYNTAX) ---
-st.markdown("""
+# --- 🚀 CUSTOM STYLING FOR MAXIMUM VISIBILITY (100% FIXED SYNTAX WITH st.html) ---
+st.html("""
 <style>
 .stApp { background-color: #050811 !important; color: #E2E8F0 !important; }
 label[data-testid="stWidgetLabel"] p, .stMarkdown p, p, span, h1, h2, h3, h4 { color: #FFFFFF !important; }
@@ -23,7 +23,7 @@ label[data-testid="stWidgetLabel"] p, .stMarkdown p, p, span, h1, h2, h3, h4 { c
 .lock-card { background-color: #0b132b; padding: 30px; border-radius: 20px; border: 2px solid #00FFCC; text-align: center; margin: auto; max-width: 500px; }
 .status-box { padding: 15px; border-radius: 12px; margin-top: 25px; font-weight: bold; font-size: 20px; text-align: center; border: 2px solid #00FFCC; background-color: #0b0f19; }
 </style>
-""", unsafe_allowed_html=True)
+""")
 
 # --- INITIALIZE SESSION STATE FOR AUTHENTICATION ---
 if "authenticated" not in st.session_state:
@@ -31,25 +31,25 @@ if "authenticated" not in st.session_state:
 
 # ==================== 🔐 LOGIN PAGE GATEWAY ====================
 if not st.session_state.authenticated:
-    st.markdown("<div style='height: 40px;'></div>", unsafe_allowed_html=True)
-    st.markdown('<div class="main-title">🧬 GeneCare AI Pro</div>', unsafe_allowed_html=True)
-    st.markdown('<div class="subtitle">Secure Genomic Bio-Vault & Predictive Clinical Interface</div>', unsafe_allowed_html=True)
+    st.html("<div style='height: 40px;'></div>")
+    st.html('<div class="main-title">🧬 GeneCare AI Pro</div>')
+    st.html('<div class="subtitle">Secure Genomic Bio-Vault & Predictive Clinical Interface</div>')
     
-    st.markdown("""
+    st.html("""
 <div class="lock-card">
     <h3 style='margin-bottom: 10px; color: #00FFCC;'>🔒 BIO-SECURITY INTERFACE</h3>
     <p style='color: #94A3B8; font-size: 14px;'>HIPAA Compliant Dynamic Verification & Profile Registration Gate</p>
 </div>
-""", unsafe_allowed_html=True)
-    st.markdown("<div style='height: 25px;'></div>", unsafe_allowed_html=True)
+""")
+    st.html("<div style='height: 25px;'></div>")
     
     username = st.text_input("Enter Clinical Identity Key / Username", placeholder="e.g., sunita")
     password = st.text_input("Enter Encrypted Passkey", type="password", placeholder="••••••••")
     
-    st.markdown("<div style='height: 10px;'></div>", unsafe_allowed_html=True)
+    st.html("<div style='height: 10px;'></div>")
     privacy_consent = st.checkbox("I authorize GeneCare AI to perform real-time genetic strand matching under strict encryption protocols.")
     
-    st.markdown("<div style='height: 15px;'></div>", unsafe_allowed_html=True)
+    st.html("<div style='height: 15px;'></div>")
     if st.button("🔓 AUTHORIZE AND DECRYPT INTERFACE", use_container_width=True, type="primary"):
         if username == "sunita" and password == "123":
             if privacy_consent:
@@ -62,15 +62,15 @@ if not st.session_state.authenticated:
             st.error("❌ Authentication Failure: Invalid username or password.")
                 
     st.divider()
-    st.markdown("""
+    st.html("""
 <div style="background-color: #0b0f19; padding: 15px; border-radius: 10px; text-align: center; border: 1px dashed #FF4D4D; max-width: 800px; margin: auto;">
     <span style="color: #FF4D4D; font-size: 13px;">🔒 SECURITY DEFENSE NOTICE: Unauthorized interception attempts are logged and purged by firewall cores.</span>
 </div>
-""", unsafe_allowed_html=True)
+""")
 
 # ==================== 🔓 UNLOCKED SYSTEM MAIN INTERFACE ====================
 else:
-    st.markdown("<div style='text-align: right;'><span style='color: #00FFCC; font-weight: bold;'>👤 Session Active: User Authenticated</span></div>", unsafe_allowed_html=True)
+    st.html("<div style='text-align: right;'><span style='color: #00FFCC; font-weight: bold;'>👤 Session Active: User Authenticated</span></div>")
     
     # 🌐 Sidebar Radio Navigation (0% spacing error risk)
     st.sidebar.markdown("### 🌐 Navigation Panel")
@@ -87,15 +87,15 @@ else:
         st.rerun()
 
     # Main Branding Titles
-    st.markdown('<div class="main-title">🧬 GeneCare AI Pro</div>', unsafe_allowed_html=True)
-    st.markdown('<div class="subtitle">Next-Gen Bio-Intelligence, Diagnostic Report Scanner & Gestational Risk Simulation Hub</div>', unsafe_allowed_html=True)
+    st.html('<div class="main-title">🧬 GeneCare AI Pro</div>')
+    st.html('<div class="subtitle">Next-Gen Bio-Intelligence, Diagnostic Report Scanner & Gestational Risk Simulation Hub</div>')
     st.divider()
 
     # ==================== 🧬 PHASE 1: GENOMIC COMPATIBILITY ====================
     if page_selection == "🧬 Phase 1: Genomic Compatibility":
         col1, col2 = st.columns([1.2, 1])
         with col1:
-            st.markdown('<div class="feature-card"><h3 style="color:#00FFCC;">👥 Core Parental Phenotype Mapping</h3>Configure baseline biological sequences to simulate Mendelian chromosomal transmission.</div>', unsafe_allowed_html=True)
+            st.html('<div class="feature-card"><h3 style="color:#00FFCC;">👥 Core Parental Phenotype Mapping</h3>Configure baseline biological sequences to simulate Mendelian chromosomal transmission.</div>')
             sub_col1, sub_col2 = st.columns(2)
             with sub_col1:
                 st.markdown("**Father's Bio-Markers**")
@@ -126,21 +126,21 @@ else:
             df_punnett = pd.DataFrame(punnett_data)
             st.table(df_punnett)
         with col2:
-            st.markdown('<div class="feature-card"><h3 style="color:#00FFCC;">🚨 Real-time Bio-Compatibility Shield</h3>Algorithmic screening for Rh incompatibility matrix and anti-body aggregation triggers.</div>', unsafe_allowed_html=True)
+            st.html('<div class="feature-card"><h3 style="color:#00FFCC;">🚨 Real-time Bio-Compatibility Shield</h3>Algorithmic screening for Rh incompatibility matrix and anti-body aggregation triggers.</div>')
             is_father_pos = "+" in f_blood
             is_mother_pos = "+" in m_blood
             if (not is_mother_pos) and is_father_pos:
                 st.error("🔴 CRITICAL IMMUNOLOGICAL DISCORDANCE DETECTED: Rh Incompatibility Active.")
                 st.write("The mother is Rh-Negative and the father is Rh-Positive.")
-                st.markdown('<div class="status-box" style="color: #FF4D4D; border-color: #FF4D4D;">🚨 IMMUNE RISK: CRITICAL (85 / 100)</div>', unsafe_allowed_html=True)
+                st.html('<div class="status-box" style="color: #FF4D4D; border-color: #FF4D4D;">🚨 IMMUNE RISK: CRITICAL (85 / 100)</div>')
             else:
                 st.success("✅ GENOMIC COMPATIBILITY INDEX SECURE: No Rh Isolation factors located.")
                 st.write("Both maternal and paternal Rh factors are fully compatible.")
-                st.markdown('<div class="status-box" style="color: #00FFCC; border-color: #00FFCC;">✅ IMMUNE RISK: SAFE (15 / 100)</div>', unsafe_allowed_html=True)
+                st.html('<div class="status-box" style="color: #00FFCC; border-color: #00FFCC;">✅ IMMUNE RISK: SAFE (15 / 100)</div>')
 
     # ==================== 🤰 PHASE 2: EMBRYONIC GROWTH TIMELINE ====================
     if page_selection == "🤰 Phase 2: Embryonic Growth Timeline":
-        st.markdown('<div class="feature-card"><h3 style="color:#00FFCC;">🤰 Interactive Fetal Organic Development Matrix</h3>Simulate fetal organogenesis progress, structural calcification, and systemic development vectors.</div>', unsafe_allowed_html=True)
+        st.html('<div class="feature-card"><h3 style="color:#00FFCC;">🤰 Interactive Fetal Organic Development Matrix</h3>Simulate fetal organogenesis progress, structural calcification, and systemic development vectors.</div>')
         st.markdown("#### 📆 Track Gestational Progression Metrics")
         selected_month = st.slider("Adjust timeline controller to see milestones inside the womb:", min_value=1, max_value=9, value=3, step=1, format="Month %d")
         st.divider()
@@ -149,3 +149,10 @@ else:
         progress_val = selected_month * 11
         desc_text = f"Fetal tracking index activated for Gestational Month {selected_month}. All physiological metrics are logging nominal structural developments."
         
+        if selected_month == 1:
+            size_label, neuro_val, skeletal_val, cardio_val = "Poppy Seed", 10, 5, 5
+            desc_text = "Neural Tube Formation and Early Cell Differentiation inside the embryonic sac."
+        elif selected_month == 2:
+            size_label, neuro_val, skeletal_val, cardio_val = "Raspberry", 25, 15, 30
+            desc_text = "Heart Begins Beating and early limb buds appear as brain hemispheres develop."
+        elif selected_month == 4:
