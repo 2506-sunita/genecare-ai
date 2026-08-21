@@ -8,7 +8,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- 🚀 CUSTOM STYLING FOR MAXIMUM VISIBILITY ---
+# --- 🚀 CUSTOM STYLING FOR MAXIMUM VISIBILITY (FIXED SYNTAX) ---
 st.markdown("""
 <style>
 .stApp { background-color: #050811 !important; color: #E2E8F0 !important; }
@@ -72,7 +72,7 @@ if not st.session_state.authenticated:
 else:
     st.markdown("<div style='text-align: right;'><span style='color: #00FFCC; font-weight: bold;'>👤 Session Active: User Authenticated</span></div>", unsafe_allowed_html=True)
     
-    # 🌐 Sidebar Radio Navigation (0% spacing error risk)
+    # 🌐 Sidebar Radio Navigation
     st.sidebar.markdown("### 🌐 Navigation Panel")
     page_selection = st.sidebar.radio("Go to Project Phase:", [
         "🧬 Phase 1: Genomic Compatibility", 
@@ -145,9 +145,9 @@ else:
         selected_month = st.slider("Adjust timeline controller to see milestones inside the womb:", min_value=1, max_value=9, value=3, step=1, format="Month %d")
         st.divider()
         
-        # 100% Flattened String Matrix (Zero Dictionary Bracket Open/Close Risk)
         size_label = "Lime"
         neuro_val = 45
         skeletal_val = 30
         cardio_val = 50
         desc_text = "Fingerprints forming, vocal chords initial setup, and kidneys start urine output safely."
+        if selected_month == 1:
