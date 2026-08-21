@@ -16,6 +16,10 @@ st.html("""
     /* Global Styles */
     .stApp { background-color: #050811 !important; font-family: 'Rajdhani', sans-serif; color: #E2E8F0; }
     
+    /* High Visibility Input Labels Fix */
+    label[data-testid="stWidgetLabel"] p { color: #FFFFFF !important; font-size: 18px !important; font-weight: bold !important; letter-spacing: 0.5px; text-shadow: 0 0 5px rgba(255,255,255,0.2); }
+    .stCheckbox label p { color: #00FFCC !important; font-size: 16px !important; font-weight: bold !important; }
+    
     /* Glowing Headers */
     .main-title { font-family: 'Orbitron', sans-serif; font-size:45px; font-weight:900; color: #00FFCC; text-align: center; margin-bottom: 2px; text-shadow: 0 0 20px rgba(0, 255, 204, 0.6); }
     .subtitle { font-size:18px; text-align: center; color: #94A3B8; margin-bottom: 35px; letter-spacing: 1px; }
@@ -51,7 +55,7 @@ if not st.session_state.authenticated:
     st.html('<div class="main-title">🧬 GeneCare AI Pro</div>')
     st.html('<div class="subtitle">Secure Genomic Bio-Vault & Predictive Clinical Interface</div>')
     
-    col_lock, _ = st.columns([1, 1])
+    col_lock, _ = st.columns()
     with col_lock:
         st.html("""
             <div class="lock-card">
@@ -59,14 +63,14 @@ if not st.session_state.authenticated:
                 <p style='color: #94A3B8; font-size: 14px;'>HIPAA Compliant Dynamic Verification & Profile Registration Gate</p>
             </div>
         """)
-        st.html("<div style='height: 20px;'></div>")
+        st.html("<div style='height: 25px;'></div>")
         
-        # Interactive Inputs inside secure card frame boundary
-        username = st.text_input("Enter Clinical Identity Key / Username", placeholder="e.g., sunita_ai")
+        # Interactive Inputs with fixed high-visibility font weights
+        username = st.text_input("Enter Clinical Identity Key / Username", placeholder="e.g., sunita")
         password = st.text_input("Enter Encrypted Passkey", type="password", placeholder="••••••••")
         
-        # Mandatory Consent Checkbox to address safety guidelines
-        privacy_consent = st.checkbox("I authorize GeneCare AI to perform real-time genetic strand matching under strict End-to-End memory encryption protocols.")
+        st.html("<div style='height: 10px;'></div>")
+        privacy_consent = st.checkbox("I authorize GeneCare AI to perform real-time genetic strand matching under strict encryption protocols.")
         
         st.html("<div style='height: 15px;'></div>")
         if st.button("🔓 AUTHORIZE AND DECRYPT INTERFACE", use_container_width=True, type="primary"):
@@ -160,5 +164,3 @@ else:
             if (not is_mother_pos) and is_father_pos:
                 st.error("🔴 CRITICAL IMMUNOLOGICAL DISCORDANCE DETECTED: Rh Incompatibility Condition Active.")
                 st.write("**Clinical Manifestation:** The mother is **Rh-Negative** and the father is **Rh-Positive**.")
-                st.info("📌 **Action Plan:** Administer **Anti-D (RhoGAM)** immunoglobulin prophylaxis at gestational week 28.")
-                st.html('<div class="status-box" style="background: linear-gradient(135deg, #4A1A1D, #7F1D1D); color: #FF4D4D; border: 2px solid #FF4D4D;">🚨 FETAL IMMUNE RISK: CRITICAL (85 / 100)</div>')
